@@ -8,25 +8,31 @@ export default function ProductCard({
   return (
     <div
       style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
         border: "solid #000 2px",
         background: "#a52a2a",
         padding: "75px 0px",
         maxWidth: "50vw",
-        margin: "75px 0px",
         borderRadius: "25px",
+        minWidth: "325px",
+        minHeight: "100%",
+        maxHeight: "100%",
       }}
     >
       <img
         src={img}
         alt={`Cover of ${name}`}
-        style={{ width: "25%", height: "auto", margin: "10px 0px" }}
+        style={{ maxWidth: "15vw", maxHeight: "30vh", margin: "10px 0px" }}
       />
       <h2>{name}</h2>
       <h3>{author}</h3>
       <p>{ISBN}</p>
       <p>{releaseDate}</p>
       <h4>{genre}</h4>
-      <button style={{ padding: "10px 20px" }}>More</button>
+      <button style={{ padding: "10px 20px", margin: "25px 0px" }}>More</button>
     </div>
   );
 }

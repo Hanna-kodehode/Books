@@ -98,17 +98,48 @@ function App() {
         <header
           style={{
             textAlign: "center",
-            padding: "20px",
-            color: "#000",
+            padding: "50px 0px",
           }}
         >
-          <h1>Book Collection</h1>
+          <h1 style={{ color: "#fff" }}>Book Collection</h1>
         </header>
       </div>
-      <div className="bookListDiv">
-        {books.map((product) => {
-          return <ProductCard key={product.ISBN} data={product} />;
-        })}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          width: "100vw",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+            overflowX: "auto",
+            overflowY: "hidden",
+            whiteSpace: "nowrap",
+            gap: "15px",
+            /*scrollPadding: "10px",*/
+            boxSizing: "border-box",
+            maxWidth: "75vw",
+          }}
+        >
+          {books.map((product) => {
+            return (
+              <ProductCard
+                key={product.ISBN}
+                style={{
+                  margin: "0",
+                  flex: "0 0 auto",
+                }}
+                data={product}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
